@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp QR Code</title>
+</head>
+<body>
+    <h1>Scan the QR Code to Login to WhatsApp</h1>
+    <img id="qrcode" src="" alt="QR Code" />
+    <script>
+        fetch('/qrcode')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('qrcode').src = data;
+            });
+    </script>
+</body>
+</html>
